@@ -1,6 +1,6 @@
 # Cake Store
 
-Link My liveWebsite with [Create React App](https://github.com/facebook/create-react-app).
+Link My liveWebsite with [Create React App](https://konokkafi-assignment-8.netlify.app/).
 
 ## Available Scripts
 
