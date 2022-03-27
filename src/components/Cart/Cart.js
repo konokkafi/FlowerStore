@@ -1,21 +1,23 @@
+import { useState } from 'react';
 import './Cart.css';
 
 const Cart = (props) => {
      const { cart } = props;
+     let [products, setProducts] = useState([]);
     let total = '';
     for(const product of cart){
-     total = total+("  ") + product.name + (" ");
+     total = total+("  ") + product.name;
     }
-    // if(cart.length>4){
-    //     alert("You already slect four items");
-    // }
-    const clear = () =>{
-      console.log (delete total[total.length]);
+    const remove = (product) =>{
+      products = [];
+      const newCart = [...cart, product];
+        setProducts(newCart);
+      // setProducts(products);
     }
 
-    const getRandomInt = () =>{
+    const Random = () =>{
         const random = Math.floor(Math.random() * cart.length);
-        console.log(random, cart[random]);
+        setProducts(random, cart[random]);
       }
 
     return (
@@ -25,10 +27,11 @@ const Cart = (props) => {
             <p>Selected items: {cart.length}</p>
             <h3> {total}</h3>
         </div>
-          <div className='btn-crt'>
-           <button onClick={getRandomInt}>Choose One for me</button>
+          <div>
+           <button onClick={Random} className='chose'>Choose One</button>
             <br />
-            <button onClick={clear}>Clear Items</button>
+            <p>{setProducts}</p>
+            <button onClick={remove} className='remove'>Removeall</button>
             </div>
         </div>
 
