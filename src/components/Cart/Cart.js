@@ -13,7 +13,7 @@ const Cart = (props) => {
       console.log (delete total[total.length]);
     }
 
-    function getRandomInt() {
+    const getRandomInt = () =>{
         const random = Math.floor(Math.random() * cart.length);
         console.log(random, cart[random]);
       }
